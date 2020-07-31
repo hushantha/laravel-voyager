@@ -5,7 +5,7 @@
         <div class="col-md-4">
             <div class="card card-blog mb-4">
                 <div class="card-img">
-                <a href="blog-single.html"><img src="{{Voyager::image($post->image)}}" alt="" class="img-fluid"></a>
+                <a href="/blog/{{ $post->slug }}"><img src="{{Voyager::image($post->image)}}" alt="" class="img-fluid"></a>
                 </div>
                 <div class="card-body">
                 <div class="card-category-box">
@@ -26,12 +26,11 @@
                     </a>
                 </div>
                 <div class="post-date">
-                    <span class="ion-ios-clock-outline"></span> {{ $post->created_at }}
+                    <span class="ion-ios-clock-outline"></span> {{ $post->created_at->format('F, d, Y') }}
                 </div>
                 </div>
             </div>
         </div>
-    @endforeach
-
-    
+        @endforeach
+            
 </div>

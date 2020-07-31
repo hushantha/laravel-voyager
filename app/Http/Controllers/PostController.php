@@ -13,7 +13,7 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $posts = Post::all();
+        $posts = Post::paginate(3);
         return view('home')->with('posts', $posts); 
     }
 
@@ -47,6 +47,8 @@ class PostController extends Controller
     public function show($id)
     {
         //
+        $post = Post::where('slug', $id)->first();
+        return view('pages.single-blog')->with('post',$post);
     }
 
     /**

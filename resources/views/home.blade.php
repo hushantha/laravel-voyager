@@ -17,5 +17,6 @@
 
 
         @include('layouts.blog-temp')
+        <p class="text-ceneter" style="display: inline-block; margin:auto;">{{ $posts->links() }}</p>
     </div>
 @endsection
