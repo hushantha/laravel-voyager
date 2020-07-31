@@ -15,42 +15,7 @@
             </div>
         </div>
 
-        <div class="row">
 
-            @foreach ($posts as $post)
-                
-                <div class="col-md-4">
-                    <div class="card card-blog">
-                        <div class="card-img">
-                        <a href="blog-single.html"><img src="{{Voyager::image($post->image)}}" alt="" class="img-fluid"></a>
-                        </div>
-                        <div class="card-body">
-                        <div class="card-category-box">
-                            <div class="card-category">
-                            <h6 class="category">Travel</h6>
-                            </div>
-                        </div>
-                        <h3 class="card-title"><a href="blog-single.html">{{$post->title}}</a></h3>
-                        <p class="card-description">
-                            {!! $post->body !!}
-                        </p>
-                        </div>
-                        <div class="card-footer">
-                        <div class="post-author">
-                            <a href="#">
-                            <img src="assets/img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
-                            <span class="author">{{ $post = App\Post::find(1)->title }}</span>
-                            </a>
-                        </div>
-                        <div class="post-date">
-                            <span class="ion-ios-clock-outline"></span> 10 min
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-
-            
-        </div>
+        @include('layouts.blog-temp')
     </div>
 @endsection

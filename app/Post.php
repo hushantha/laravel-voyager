@@ -8,8 +8,13 @@ class Post extends Model
 {
     //
 
-    public function Users() {
-        return $this->belongsTo('App\User', 'id');
-        // return $post = User::find(1);
+    public $table = "posts";
+
+    public $primaryKey = "id";
+
+    public $timeStamp = true;
+
+    public function user() {
+        return $this->belongsTo(User::class, 'author_id');
     }
 }

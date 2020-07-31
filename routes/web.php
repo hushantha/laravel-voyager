@@ -14,10 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'PostController@index');
+Route::get('/blog/{slug}', 'PostController@show');
+
 Route::get('/movies', 'PageController@movies');
 Route::get('/actors', 'PageController@actors');
 Route::get('/blog', 'PageController@blog');
 Route::get('/about', 'PageController@about');
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
